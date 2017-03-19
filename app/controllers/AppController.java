@@ -22,7 +22,7 @@ public class AppController extends EPController {
      * @return OK 200 with a list that may be empty if there are no hospitals.
      */
     public Result test() {
-        return redirect("http://hospital-arquisoft.herokuapp.com/test" );
+        return redirect("http://hospital-arquisoft.herokuapp.com/test");
     }
 
 }
