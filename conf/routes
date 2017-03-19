@@ -21,7 +21,7 @@ GET         /                       controllers.Application.index()
 # Hospital
 #########################################
 
-GET         /test                          controllers.AppController.test()
+POST         /test                          controllers.AppController.test()
 
 
 
