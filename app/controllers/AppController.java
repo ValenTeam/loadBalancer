@@ -24,6 +24,9 @@ public class AppController extends EPController {
     @Inject
     private WSClient ws;
 
+    private static String BASE_PATH =  "http://hospital-arquisoft.herokuapp.com";
+    private static int index = 0;
+
     /**
      * Finds all the hospitals
      * @return OK 200 with a list that may be empty if there are no hospitals.
@@ -31,6 +34,14 @@ public class AppController extends EPController {
     public Result test() {
         ws.url("http://hospital-arquisoft.herokuapp.com/medicion").setContentType("application/json").post(request().body().asText());
         return ok();
+    }
+
+    public Result getHospitales() {
+        if (++index == 500){
+            BASE_PATH =  "http://hospital-arquisoft2.herokuapp.com";
+            index = 0;
+        }
+        return redirect(BASE_PATH+"/hospital");
     }
 
 }

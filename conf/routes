@@ -22,6 +22,7 @@ GET         /                       controllers.Application.index()
 #########################################
 
 POST         /test                          controllers.AppController.test()
+GET         /hospital                       controllers.AppController.getHospitales()
 
 
 
