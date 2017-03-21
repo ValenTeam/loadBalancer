@@ -53,7 +53,7 @@ public class AppController extends EPController {
             }
         }
         F.Promise<play.libs.ws.WSResponse> promise = ws.url(BASE_PATH+"/hospital").get();
-        return ok(promise.get(3000).asJson().toString());
+        return ok(promise.get(30000).asJson().toString());
     }
 
     public Result loader(){
