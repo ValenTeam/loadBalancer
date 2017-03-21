@@ -47,7 +47,7 @@ public class AppController extends EPController {
                     uno = true;
                 }
                 else {
-                    BASE_PATH = "http://hospital-arquisoft1.herokuapp.com";
+                    BASE_PATH = "http://hospital-arquisoft.herokuapp.com";
                     uno = false;
                 }
             }
