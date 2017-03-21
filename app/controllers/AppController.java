@@ -40,7 +40,7 @@ public class AppController extends EPController {
 
     public Result getHospitales() {
         synchronized (index){
-            if (++index == 1000){
+            if (++index == 5000){
                 index = 0;
                 if (!uno) {
                     BASE_PATH = "http://hospital-arquisoft2.herokuapp.com";
