@@ -23,6 +23,8 @@ GET         /                       controllers.Application.index()
 
 POST         /test                          controllers.AppController.test()
 GET         /hospital                       controllers.AppController.getHospitales()
+GET         /loaderio-57cae14f62bd4c74ee353f009b94b6fe/                       controllers.AppController.loader()
+
 
 
 

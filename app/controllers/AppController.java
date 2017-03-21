@@ -44,4 +44,8 @@ public class AppController extends EPController {
         return redirect(BASE_PATH+"/hospital");
     }
 
+    public Result loader(){
+        return ok("loaderio-57cae14f62bd4c74ee353f009b94b6fe");
+    }
+
 }
