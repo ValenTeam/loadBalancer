@@ -26,7 +26,7 @@ public class AppController extends EPController {
     private WSClient ws;
 
     private static String BASE_PATH =  "http://hospital-arquisoft.herokuapp.com";
-    private static int index = 0;
+    private static Integer index = 0;
 
     /**
      * Finds all the hospitals
@@ -38,9 +38,11 @@ public class AppController extends EPController {
     }
 
     public Result getHospitales() {
-        if (++index == 500){
-            BASE_PATH =  "http://hospital-arquisoft2.herokuapp.com";
-            index = 0;
+        synchronized (index){
+            if (++index == 1000){
+                BASE_PATH =  "http://hospital-arquisoft2.herokuapp.com";
+                index = 0;
+            }
         }
         F.Promise<play.libs.ws.WSResponse> promise = ws.url(BASE_PATH+"/hospital").get();
         return ok(promise.get(3000).asJson().toString());
