@@ -10,6 +10,7 @@ import controllers.base.EPController;
 import models.Hospital;
 import org.jongo.Jongo;
 import play.api.libs.ws.WSResponse;
+import play.libs.F;
 import play.libs.ws.WSClient;
 import play.mvc.Result;
 import scala.concurrent.java8.FuturesConvertersImpl;
@@ -41,7 +42,8 @@ public class AppController extends EPController {
             BASE_PATH =  "http://hospital-arquisoft2.herokuapp.com";
             index = 0;
         }
-        return redirect(BASE_PATH+"/hospital");
+        F.Promise<play.libs.ws.WSResponse> promise = ws.url(BASE_PATH+"/hospital").get();
+        return ok(promise.get(3000).asJson().toString());
     }
 
     public Result loader(){
